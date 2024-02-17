@@ -5,13 +5,18 @@ set -e
 executable_dir=$(dirname "$0")
 ffmpeg_dir=$(realpath "$PWD/ffmpeg")
 
+sudo_prefix=""
+if [[ $EUID -ne 0 ]]; then # 判断当前用户是否有管理员权限（非root）
+    sudo_prefix="sudo" # If not add "sudo " prefix
+fi
+
 # download ffmpeg
 git clone --branch n6.1.1 https://github.com/FFmpeg/FFmpeg.git "$ffmpeg_dir"
 
-sudo apt update
+$sudo_prefix apt update
 
 # install dependencies
-sudo apt install -y \
+$sudo_prefix apt install -y \
     nasm \
     yasm \
     libopenjp2-7-dev \
@@ -47,8 +52,8 @@ sudo apt install -y \
 # install ffmpeg nv-codec-headers
 # cuda tools should be installed previously
 git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
-cd nv-codec-headers && sudo make install && cd -
-sudo apt install build-essential yasm cmake libtool libc6 libc6-dev libnuma1 libnuma-dev
+cd nv-codec-headers && $sudo_prefix make install && cd -
+$sudo_prefix apt install build-essential yasm cmake libtool libc6 libc6-dev libnuma1 libnuma-dev
 
 # compile ffmpeg
 cd "$ffmpeg_dir"
@@ -96,4 +101,4 @@ cd "$ffmpeg_dir"
     --enable-libass \
     --enable-opengl
 
-make -j 8 && sudo make install && cd -
+make -j 8 && $sudo_prefix make install && cd -
