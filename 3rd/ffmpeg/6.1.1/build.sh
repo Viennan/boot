@@ -11,7 +11,7 @@ if [[ $EUID -ne 0 ]]; then # 判断当前用户是否有管理员权限（非roo
 fi
 
 # download ffmpeg
-git clone --branch n6.1.1 https://github.com/FFmpeg/FFmpeg.git "$ffmpeg_dir"
+# git clone --branch n6.1.1 https://github.com/FFmpeg/FFmpeg.git "$ffmpeg_dir"
 
 $sudo_prefix apt update
 
@@ -19,6 +19,7 @@ $sudo_prefix apt update
 $sudo_prefix apt install -y \
     nasm \
     yasm \
+    libdrm-dev \
     libopenjp2-7-dev \
     libwebp-dev \
     frei0r-plugins-dev \
@@ -51,9 +52,9 @@ $sudo_prefix apt install -y \
 
 # install ffmpeg nv-codec-headers
 # cuda tools should be installed previously
-git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
-cd nv-codec-headers && $sudo_prefix make install && cd -
-$sudo_prefix apt install build-essential yasm cmake libtool libc6 libc6-dev libnuma1 libnuma-dev
+# git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
+# cd nv-codec-headers && $sudo_prefix make install && cd -
+# $sudo_prefix apt install -y build-essential yasm cmake libtool libc6 libc6-dev libnuma1 libnuma-dev
 
 # compile ffmpeg
 cd "$ffmpeg_dir"

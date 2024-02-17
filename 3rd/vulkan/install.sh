@@ -11,4 +11,4 @@ fi
 wget -qO- https://packages.lunarg.com/lunarg-signing-key-pub.asc | $sudo_prefix tee /etc/apt/trusted.gpg.d/lunarg.asc
 $sudo_prefix wget -qO /etc/apt/sources.list.d/lunarg-vulkan-$1-$2.list https://packages.lunarg.com/vulkan/$1/lunarg-vulkan-$1-$2.list
 $sudo_prefix apt update
-$sudo_prefix apt install vulkan-sdk
+$sudo_prefix apt install -y vulkan-sdk
