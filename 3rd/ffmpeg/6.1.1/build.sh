@@ -102,4 +102,4 @@ cd "$ffmpeg_dir"
     --enable-libass \
     --enable-opengl
 
-make -j 8 && $sudo_prefix make install && cd -
+# make -j 8 && $sudo_prefix make install && cd -
