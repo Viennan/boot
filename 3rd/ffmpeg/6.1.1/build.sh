@@ -55,6 +55,7 @@ fi
 # git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
 # cd nv-codec-headers && $sudo_prefix make install && cd -
 # $sudo_prefix apt install -y build-essential yasm cmake libtool libc6 libc6-dev libnuma1 libnuma-dev
+# rm -rf nv-codec-headers
 
 # compile ffmpeg
 cd "$ffmpeg_dir"
