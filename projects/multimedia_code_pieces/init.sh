@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 executable_dir=$(dirname "$0")
 basic_script=$(realpath "$executable_dir/../../basic/init_c.sh")
 vulkan_script=$(realpath "$executable_dir/../../3rd/vulkan/install.sh")

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 executable_dir=$(dirname "$0")
 ffmpeg_dir=$(realpath "$PWD/ffmpeg")
 
