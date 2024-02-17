@@ -1,9 +1,9 @@
 #!/bin/bash
 
 executable_dir=$(dirname "$0")
-basic_script=$(realpath "$executable_dir/../basic/init_c.sh")
-vulkan_script=$(realpath "$executable_dir/../3rd/vulkan/install.sh")
-ffmpeg_script=$(realpath "$executable_dir/../3rd/ffmpeg/6.1.1/build.sh")
+basic_script=$(realpath "$executable_dir/../../basic/init_c.sh")
+vulkan_script=$(realpath "$executable_dir/../../3rd/vulkan/install.sh")
+ffmpeg_script=$(realpath "$executable_dir/../../3rd/ffmpeg/6.1.1/build.sh")
 
 # install basic dependencies
 bash "$basic_script"
