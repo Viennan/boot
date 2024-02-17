@@ -1,7 +1,7 @@
 #!/bin/bash
 
 executable_dir=$(dirname "$0")
-ffmpeg_dir=$(realpath "$executable_dir/ffmpeg")
+ffmpeg_dir=$(realpath "$PWD/ffmpeg")
 
 # download ffmpeg
 git clone --branch n6.1.1 https://github.com/FFmpeg/FFmpeg.git "$ffmpeg_dir"
