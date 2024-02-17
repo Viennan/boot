@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo apt install -y build-essential cmake wget git
+sudo apt install -y build-essential cmake wget git unzip
