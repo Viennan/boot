@@ -1,0 +1,80 @@
+#!/bin/bash
+
+set -e
+
+./configure --enable-gpl \
+    --disable-stripping \
+    --disable-omx \
+    --enable-gnutls \
+    --enable-nonfree \
+    --enable-libaom \
+    --enable-libass \
+    --enable-libbs2b \
+    --enable-libcaca \
+    --enable-libcodec2 \
+    --enable-libdav1d \
+    --enable-libflite \
+    --enable-libfontconfig \
+    --enable-libfreetype \
+    --enable-libfribidi \
+    --enable-libglslang \
+    --enable-libgme \
+    --enable-libgsm \
+    --enable-libharfbuzz \
+    --enable-libmp3lame \
+    --enable-libmysofa \
+    --enable-libopenjpeg \
+    --enable-libopenmpt \
+    --enable-libopus \
+    --enable-librubberband \
+    --enable-libshine \
+    --enable-libsnappy \
+    --enable-libsoxr \
+    --enable-libspeex \
+    --enable-libtheora \
+    --enable-libtwolame \
+    --enable-libvidstab \
+    --enable-libvorbis \
+    --enable-libvpx \
+    --enable-libwebp \
+    --enable-libx265 \
+    --enable-libxml2 \
+    --enable-libxvid \
+    --enable-libzimg \
+    --enable-openal \
+    --enable-opencl \
+    --enable-opengl \
+    --disable-sndio \
+    --enable-libvpl \
+    --disable-libmfx \
+    --enable-libdrm \
+    --enable-chromaprint \
+    --enable-frei0r \
+    --enable-ladspa \
+    --enable-libjack \
+    --enable-libpulse \
+    --enable-librabbitmq \
+    --enable-librist \
+    --enable-libsrt \
+    --enable-libssh \
+    --enable-libsvtav1 \
+    --enable-libx264 \
+    --enable-libzmq \
+    --enable-libzvbi \
+    --enable-lv2 \
+    --enable-libplacebo \
+    --enable-librav1e \
+    --enable-librsvg \
+    --enable-libjxl \
+    --enable-cuda-nvcc \
+    --enable-libnpp \
+    --enable-vulkan \
+    --disable-ffplay \
+    --enable-shared \
+    --disable-static \
+    --extra-cflags=-I/usr/local/cuda/include \
+    --extra-ldflags=-L/usr/local/cuda/lib64 \
+    --prefix=${USER_LIB_PATH}/ffmpeg/7.1.3
+
+make -j 8
+make install
